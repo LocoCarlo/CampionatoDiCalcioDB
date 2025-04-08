@@ -1,0 +1,182 @@
+---
+title: "Analisi del Campionato"
+author: "Analista R"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Installazione e Caricamento Pacchetti
+```{r}
+if (!require(RPostgres)) install.packages("RPostgres")
+if (!require(DBI)) install.packages("DBI")
+if (!require(ggplot2)) install.packages("ggplot2")
+library(DBI)
+library(RPostgres)
+library(ggplot2)
+library(dplyr)
+```
+
+# Connessione al Database
+```{r}
+con <- dbConnect(RPostgres::Postgres(), 
+                 dbname = 'CAMPIONATO',
+                 host = '127.0.0.1', 
+                 port = 5432,
+                 user = 'postgres', 
+                 password = '')
+```
+
+# Verifica Connessione
+```{r}
+dbListTables(con)
+```
+
+# Esempio di Query SQL: Classifica Punti Squadre
+```{r}
+query_punti <- "SELECT nome, punti FROM squadra ORDER BY punti DESC ;"
+df_punti <- dbGetQuery(con, query_punti)
+head(df_punti)
+```
+
+# Visualizzazione Classifica
+```{r}
+# Caricamento delle librerie necessarie
+library(ggplot2)
+library(dplyr)
+
+
+# Filtra le partite vinte (esito = 3)
+# Assumiamo che 'df_punti' contenga già la classifica con colonna 'nome' e 'ranking'
+# Unisci la tabella delle vittorie con la classifica
+vittorie_ordinate <- vittorie %>%
+  left_join(df_punti %>% select(nome, ranking), by = c("squadra" = "nome")) %>%
+  arrange(ranking)
+
+# Crea il grafico ordinando per ranking
+ggplot(vittorie_ordinate, aes(x = reorder(squadra, -ranking), y = vittorie)) +
+  geom_bar(stat = "identity", color = "black", size = 0.4) +
+  geom_bar(stat = "identity", fill = "LIGHTBLUE") +
+  labs(title = "Numero di Partite Vinte per Squadra (ordinate per classifica)",
+       x = "Squadra",
+       y = "Numero di Vittorie") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+
+
+# Creazione di una colonna per il colore personalizzato e le prime tre lettere del nome
+df_punti <- df_punti %>%
+  mutate(
+    colore = case_when(
+      punti == max(punti) ~ "Vincitrice del campionato",
+      row_number(desc(punti)) %in% 2:4 ~ "Champions League",
+      row_number(desc(punti)) %in% 5:6 ~ "Europa League",
+      row_number(desc(punti)) %in% 7:8 ~ "Conference League",
+      row_number(desc(punti)) > (n() - 3) ~ "Serie B",
+      TRUE ~ "Altre squadre"
+    ),
+    abbreviazione = substr(nome, 1, 3)  # Prende le prime 3 lettere del nome
+  )
+
+# Aggiungi una colonna di ranking basata sui punti, con ordine alfabetico in caso di parità
+df_punti <- df_punti %>%
+  arrange(desc(punti), abbreviazione) %>%
+  mutate(ranking = row_number())
+
+# Creazione del grafico con squadre ordinate per punti
+ggplot(df_punti, aes(x = reorder(abbreviazione, -ranking), y = punti, fill = colore)) +
+  geom_bar(stat = "identity", color = "black", size = 0.3) + 
+  geom_text(aes(label = punti), vjust = -0.5, size = 3) +  # Aggiunge il numero sopra la barra
+  scale_fill_manual(values = c(
+    "Vincitrice del campionato" = "GOLD",
+    "Champions League" = "DODGERBLUE",
+    "Europa League" = "SANDYBROWN",
+    "Conference League" = "MEDIUMSEAGREEN",
+    "Serie B" = "LIGHTCORAL",
+    "Altre squadre" = "LIGHTGRAY")) +
+  labs(title = "Classifica Punti", x = "Squadra", y = "Punti", fill = "Legenda") +
+  theme_minimal()
+
+
+
+# 🔹 Creiamo i punti cumulativi direttamente su df_esito
+df_esito <- df_esito %>%
+  group_by(squadra) %>%
+  arrange(squadra, giornata) %>%  # Ordina anche per squadra!
+  mutate(punti_cumulativi = cumsum(punti)) %>%
+  ungroup()
+
+# 🔹 Grafico generale con tutte le squadre
+p1 <- ggplot(df_esito, aes(x = giornata, y = punti_cumulativi, color = squadra, group = squadra)) +
+  geom_line(size = 1) +
+  labs(title = "Andamento Generale delle Squadre", x = "Giornata", y = "Punti Cumulativi") +
+  theme_minimal()
+
+print(p1)  # Mostra il grafico generale
+
+
+
+
+library(ggrepel)  # Per etichette leggibili
+
+for (i in seq_along(gruppi)) {
+  df_gruppo <- df_esito %>% filter(squadra %in% gruppi[[i]])
+  
+  # Estrai l'ultimo punto per ogni squadra per posizionare l'etichetta
+ df_labels <- df_gruppo %>%
+  group_by(squadra) %>%
+  filter(giornata == max(giornata)) %>%
+  mutate(giornata = 38) %>%  # Sposta le etichette fino al margine destro
+  ungroup()
+  
+  p2 <- ggplot(df_gruppo, aes(x = giornata, y = punti_cumulativi, color = squadra)) +
+    geom_line(size = 1.2) +
+    geom_point(size = 1, alpha = 0.5) +
+    
+    # Etichette finali accanto all'ultima giornata
+    geom_text_repel(
+  data = df_labels,
+  aes(label = paste0(squadra, " (", punti_cumulativi, ")")),
+  nudge_x = 1.5,
+  direction = "y",
+  hjust = 0,
+  segment.size = 0.2,
+  fontface = "bold",
+  show.legend = FALSE
+) +
+    
+    # Limite dell'asse X
+   scale_x_continuous(limits = c(1, 40), breaks = seq(0, 70, 10)) +
+    
+  # Limite dell'asse Y
+  scale_y_continuous(
+  limits = c(0, 70),
+  breaks = seq(0, 70, 5),  # Break ogni 5 punti per leggibilità
+  expand = c(0, 0)
+  ) +
+    
+    labs(
+      title = paste("Andamento Punti - Gruppo", i),
+      subtitle = paste("Squadre:", paste(gruppi[[i]], collapse = ", ")),
+      x = "Giornata",
+      y = "Punti Cumulativi"
+    ) +
+    
+    theme_minimal(base_size = 13) +
+    theme(
+      plot.title = element_text(face = "bold", size = 15),
+      plot.subtitle = element_text(size = 11, margin = margin(b = 10)),
+      legend.position = "none",  # Nasconde la legenda
+      panel.grid.minor = element_blank()
+    )
+  
+  print(p2)
+}
+
+```
+

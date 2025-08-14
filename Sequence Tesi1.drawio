@@ -1,0 +1,157 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" version="28.1.0">
+  <diagram name="Pagina-1" id="tq52YlOCexYvRxjg1cUE">
+    <mxGraphModel dx="770" dy="607" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SwMPss9vTa-oRpbX-aID-1" value="Utente&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="55" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-2" value="" style="endArrow=none;dashed=1;html=1;dashPattern=8 8;strokeWidth=0.5;rounded=0;strokeColor=#FFFFFF;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="43" y="125" as="sourcePoint" />
+            <mxPoint x="40" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-3" value="Raspberry Pi&lt;div&gt;(Access Point)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="80" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-4" value="Flask Server" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="80" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-6" value="DB Exelio" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="80" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-8" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Connessione al Wi-Fi&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;&#39;Raspi-Setup&#39;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-9" value="" style="endArrow=none;dashed=1;html=1;dashPattern=8 8;strokeWidth=0.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="160" as="sourcePoint" />
+            <mxPoint x="200" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-10" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;strokeWidth=0.5;" vertex="1" parent="1">
+          <mxGeometry x="25" y="332.5" width="350" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;strokeWidth=0.5;" edge="1" parent="1" target="SwMPss9vTa-oRpbX-aID-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="160" as="sourcePoint" />
+            <mxPoint x="150" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-12" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;entryX=0.063;entryY=1.187;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="SwMPss9vTa-oRpbX-aID-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="240" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-14" value="NetworkManager" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="80" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-18" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;exitX=0.115;exitY=1.049;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.195;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-10" target="SwMPss9vTa-oRpbX-aID-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="200" as="sourcePoint" />
+            <mxPoint x="40" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-19" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Reindirizzamneto automatico&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;al captive portal&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-23" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 9px; text-wrap-mode: nowrap;&quot;&gt;Invio &amp;nbsp;SSID e password&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 9px; text-wrap-mode: nowrap;&quot;&gt;&amp;nbsp;tramite form web&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="200" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-24" value="" style="endArrow=none;dashed=1;html=1;dashPattern=8 8;strokeWidth=0.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="220" as="sourcePoint" />
+            <mxPoint x="320" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-25" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;strokeWidth=0.5;" vertex="1" parent="1">
+          <mxGeometry x="175" y="365" width="290" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-27" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;strokeWidth=0.5;" vertex="1" parent="1">
+          <mxGeometry x="321.25" y="388.75" width="237.5" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-28" value="" style="endArrow=none;dashed=1;html=1;dashPattern=8 8;strokeWidth=0.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="270" as="sourcePoint" />
+            <mxPoint x="439.58" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-29" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;exitX=0.198;exitY=-0.028;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.032;entryY=1.127;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-25" target="SwMPss9vTa-oRpbX-aID-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="280" as="sourcePoint" />
+            <mxPoint x="440" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-30" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 9px; white-space: nowrap;&quot;&gt;Trasmissione credenziali&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 9px; white-space: nowrap;&quot;&gt;per configurazione di rete&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="240" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-31" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;entryX=0.457;entryY=-0.054;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.2;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-27" target="SwMPss9vTa-oRpbX-aID-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="240" as="sourcePoint" />
+            <mxPoint x="417" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-32" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;disconnessione AP e tentativo di connessione alla nuova rete.&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="270" width="100" height="32.5" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-33" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;entryX=0.667;entryY=-0.07;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.368;exitY=0.967;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="360" as="sourcePoint" />
+            <mxPoint x="323" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-34" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Esito connessione&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;(successo / errore)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="325" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-38" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;entryX=0.714;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.612;exitY=1.058;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-25" target="SwMPss9vTa-oRpbX-aID-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="400" as="sourcePoint" />
+            <mxPoint x="40" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-39" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Aggiornamento interfaccia&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;web&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="195" y="363" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-40" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=0.5;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.082;entryY=1.038;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-25" target="SwMPss9vTa-oRpbX-aID-44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="437" y="400" as="sourcePoint" />
+            <mxPoint x="550" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-41" value="&lt;span style=&quot;font-size: 9px;&quot;&gt;Invio richiesta&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;autenticazione&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;e accesso&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;dati&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="321.25" y="388.75" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-43" value="" style="endArrow=none;dashed=1;html=1;dashPattern=8 8;strokeWidth=0.5;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="430" as="sourcePoint" />
+            <mxPoint x="560" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-44" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;strokeWidth=0.5;" vertex="1" parent="1">
+          <mxGeometry x="520.63" y="470.62" width="78.75" height="5" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-45" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.589;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=0.5;entryX=0.922;entryY=-0.043;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SwMPss9vTa-oRpbX-aID-44" target="SwMPss9vTa-oRpbX-aID-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="556" y="479" as="sourcePoint" />
+            <mxPoint x="40" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-46" value="&lt;span style=&quot;font-size: 9px;&quot;&gt;Risposta positiva con&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;dati disponibili&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="441.25" y="440" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-48" value="" style="endArrow=none;dashed=1;html=1;dashPattern=8 8;strokeWidth=0.5;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" target="SwMPss9vTa-oRpbX-aID-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40.000000000000114" y="510" as="sourcePoint" />
+            <mxPoint x="40" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SwMPss9vTa-oRpbX-aID-47" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;strokeWidth=0.5;" vertex="1" parent="1">
+          <mxGeometry x="-152.5" y="315" width="385" height="5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
